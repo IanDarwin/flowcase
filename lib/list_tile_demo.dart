@@ -12,14 +12,18 @@ class ListTileDemos extends StatelessWidget {
           title: Text("Ian Darwin"),
           subtitle: Text("Mobile Developer"),
           trailing:
-              Icon(Icons.add_a_photo),
+              Icon(Icons.book,
+                color: Colors.red,
+              ),
         ),
         ListTile(
           leading: Text('🇬🇧'),
           title: Text("Charles Darwin"),
           subtitle: Text("Naturalist"),
           trailing:
-                Icon(Icons.anchor_rounded)
+                Icon(Icons.anchor_rounded,
+                  color: Colors.blue,
+                ),
         ),
       ]
     );

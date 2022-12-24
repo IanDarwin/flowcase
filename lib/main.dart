@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         // This is the theme of your application.
         primarySwatch: Colors.lightGreen,
       ),
-      home: const MyHomePage(title: 'Learning Tree Flutter Demos'),
+      home: const MyHomePage(title: 'Learning Tree Flutter Demo App'),
     );
   }
 }

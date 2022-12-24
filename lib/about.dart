@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 class About extends StatelessWidget {
   static const htmlText = """
 <html>
-<h1>About the Learning Tree Flutter Demo App</h1>
+<h1>About the Flutter Demo App</h1>
 <p>This app demonstrates some of the
     <a href="https://flutter.dev">Flutter</a>
     widgets covered in the course, that will set you on your way to building

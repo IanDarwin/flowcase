@@ -1,6 +1,7 @@
 import 'package:counter_demo/layout_demos.dart';
 import 'package:counter_demo/login_screen.dart';
 import 'package:counter_demo/nav_drawer.dart';
+import 'package:counter_demo/snackbar_demo.dart';
 import 'package:counter_demo/tab_demo.dart';
 import 'package:counter_demo/text_demos.dart';
 import 'package:counter_demo/wrapper.dart';
@@ -82,8 +83,9 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: NavDrawer(),
       body:  GridView.count(
           crossAxisCount: 2,
-          childAspectRatio: 2.0,
+          childAspectRatio: 2.5,
           children: [
+            // Most of these use our own Wrapper but a few do not; edit w/ care.
             ElevatedButton(
               child: const Text("Button Demo"),
               onPressed: () {
@@ -134,6 +136,12 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ElevatedButton(
+              child: const Text("SnackBar Demo"),
+              onPressed: () {
+                _showSnackBar(context);
+              },
+            ),
+            ElevatedButton(
               child: const Text("Table Demo"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
@@ -172,5 +180,18 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
       ),
     );
+  }
+
+  final String item = "Item #123";
+
+  void _showSnackBar(BuildContext context) {
+    final snackBar = SnackBar(
+      content: Text("Deleted $item"),
+      action: SnackBarAction(
+        label: "Undo",
+        onPressed: () => debugPrint("Would undo delete of $item"),
+      ),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }

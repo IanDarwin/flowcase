@@ -12,21 +12,18 @@ class ButtonDemos extends StatefulWidget {
 class _ButtonDemosState extends State<ButtonDemos> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Scaffold(
+        body: Column(
         children:[
           // A TextButton has no border or background by default
           TextButton(
-            onPressed: () {
-              // do something when pressed
-            },
+            onPressed: () => debugPrint("TextButton pressed"),
             child: Text("Push me"),
           ),
 
           // The common MaterialButton
           ElevatedButton(
-            onPressed: () {
-              // do something when pressed
-            },
+            onPressed: () => debugPrint("ElevatedButton pressed"),
             child: Text("Push me"),
           ),
 
@@ -40,7 +37,7 @@ class _ButtonDemosState extends State<ButtonDemos> {
                 borderRadius: BorderRadius.circular(10.0),
               ),
             ),
-            onPressed: () => {},
+            onPressed: () => debugPrint("Image Button pressed"),
             child: Image.asset("images/logo.png",
                 height:64,
                 ),
@@ -49,11 +46,15 @@ class _ButtonDemosState extends State<ButtonDemos> {
           // IconButton to use one of the pre-defined Icons
           IconButton(
             icon: Icon(Icons.add_a_photo_sharp),
-            onPressed: () {},
+            onPressed: () => debugPrint("IconButton pressed"),
           ),
         ]
-    )
-    ;
+    ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => debugPrint("FAB pressed"),
+        child: Icon(Icons.add),
+      ),
+    );
   }
 
 

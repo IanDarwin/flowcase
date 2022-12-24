@@ -1,0 +1,16 @@
+= flutterdemos
+
+A demo app that runs a bunch of self-contained Flutter demos.
+
+== TODO
+
+Add a button to display the source code.
+
+== Maint
+
+If you change `images/logo.png`, be sure to run
+
+	flutter pub run flutter_launcher_icons
+
+This generates all the derivate icon files for all plats listed in the
+icons section of pubspec.yaml.

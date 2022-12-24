@@ -1,0 +1,40 @@
+name: counter_demo
+description: A demo Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.5 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_html: ^3.0.0-alpha.6
+  # For viewing HTML. Note if you add this while working and use
+  # hot reload, it will fail; you must stop & restart the app the first time.
+  url_launcher: ^6.1.7
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^1.7.3
+  flutter_launcher_icons: ^0.11.0
+
+# The following section is specific to Flutter packages.
+flutter:
+  uses-material-design: true
+  assets:
+    - images/logo.png
+
+flutter_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path: "images/logo.png"
+

@@ -1,6 +1,7 @@
 import 'package:counter_demo/layout_demos.dart';
 import 'package:counter_demo/login_screen.dart';
 import 'package:counter_demo/nav_drawer.dart';
+import 'package:counter_demo/tab_demo.dart';
 import 'package:counter_demo/text_demos.dart';
 import 'package:counter_demo/wrapper.dart';
 import 'package:flutter/material.dart';
@@ -78,12 +79,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      body: Center(
-        child:Column(
+      drawer: NavDrawer(),
+      body:  GridView.count(
+          crossAxisCount: 2,
+          childAspectRatio: 2.0,
           children: [
-            Container(height: 40),
             ElevatedButton(
-              child: Text("Button Demo"),
+              child: const Text("Button Demo"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) => const Wrapper('Buttons', ButtonDemos())));
@@ -97,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ElevatedButton(
-              child: Text("Dialog Demo"),
+              child: const Text("Dialog Demo"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) => const Wrapper('Dialog', DialogDemos())));
@@ -139,6 +141,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ElevatedButton(
+              child: const Text("Tabs Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                  // Does not need Wrapper()
+                    builder: (context) => TabsDemo()));
+              },
+            ),
+            ElevatedButton(
               child: const Text("Text Demo"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
@@ -153,16 +163,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             TextButton(
-              child: Text("About"),
+              child: const Text("About"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) => Wrapper('About LTDemo', About())));
               },
             ),
           ],
-        ),
       ),
-      drawer: NavDrawer(),
     );
   }
 }

@@ -12,5 +12,5 @@ If you change `images/logo.png`, be sure to run
 
 	flutter pub run flutter_launcher_icons
 
-This generates all the derivate icon files for all plats listed in the
+This generates the derivative icon files for all platforms listed in the
 icons section of pubspec.yaml.

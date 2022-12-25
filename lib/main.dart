@@ -89,6 +89,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: GridView.count(
         crossAxisCount: 2,
         childAspectRatio: 2.5,
+        padding: EdgeInsets.all(10),
+        mainAxisSpacing: 5.0,
+        crossAxisSpacing: 5.0,
         children: [
           // Most of these use our own Wrapper but a few do not; edit w/ care.
           ElevatedButton(
@@ -155,8 +158,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           ElevatedButton(
             child: const Text("SnackBar Demo"),
-            onPressed: () {
-              showUndeleteSnackbar(context, "Item #123");
+            onPressed: () { // Done here in main Widget
+              showUndoSnackbar(context, "Deleted Item #123");
             },
           ),
           ElevatedButton(
@@ -201,12 +204,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-void showUndeleteSnackbar(BuildContext context, String item) {
+void showUndoSnackbar(BuildContext context, String message) {
   final snackBar = SnackBar(
-    content: Text("Deleted $item"),
+    content: Text(message),
     action: SnackBarAction(
       label: "Undo",
-      onPressed: () => debugPrint("Would undo delete of $item"),
+      onPressed: () => debugPrint("Would undo '$message'"),
     ),
   );
   ScaffoldMessenger.of(context).showSnackBar(snackBar);

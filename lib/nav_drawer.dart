@@ -1,4 +1,7 @@
+import 'package:counter_demo/wrapper.dart';
 import 'package:flutter/material.dart';
+
+import 'about.dart';
 
 class NavDrawer extends StatelessWidget {
 
@@ -32,7 +35,10 @@ class NavDrawer extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.info),
               title: const Text('About MyApp'),
-              onTap: () => {},
+              onTap: () => {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => Wrapper('About LTDemo', About())))
+              }
             ),
           ]),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'main.dart' show showUndeleteSnackbar;
+import 'main.dart' show showUndoSnackbar;
 
 class DragDropDemo extends StatefulWidget {
   const DragDropDemo({super.key});
@@ -93,7 +93,7 @@ class _DragDropDemoState extends State<DragDropDemo> {
     setState(() {
       cartItems.add(product);
     });
-    showUndeleteSnackbar(context, product.productName);
+    showUndoSnackbar(context, "Added ${product.productName}");
   }
 }
 

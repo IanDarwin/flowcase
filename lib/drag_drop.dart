@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'main.dart' show showUndeleteSnackbar;
+
 class DragDropDemo extends StatefulWidget {
   const DragDropDemo({super.key});
 
@@ -34,6 +36,10 @@ class _DragDropDemoState extends State<DragDropDemo> {
   Widget build(BuildContext context) {
     return Column(
         children: [
+          const Padding(
+            padding: EdgeInsets.all(10),
+            child: Text("Long-press and drag an item to the yellow zone",)
+          ),
           Column(
             children: products.map((product) {
               return LongPressDraggable<Product>(
@@ -46,7 +52,7 @@ class _DragDropDemoState extends State<DragDropDemo> {
                   child:ListTile(
                     leading: product.categoryIcon,
                     title: SizedBox(
-                      height:128,
+                      height:96,
                       child: Image.asset(product.imageName),
                     ),
                     subtitle: Center(child: Text(product.productName)),
@@ -87,10 +93,11 @@ class _DragDropDemoState extends State<DragDropDemo> {
     setState(() {
       cartItems.add(product);
     });
+    showUndeleteSnackbar(context, product.productName);
   }
 }
 
-/// Display the product as it's beind dragged.
+/// Display the product as it's being dragged.
 /// Borrowed from official docs (under Creative Commons)
 /// https://docs.flutter.dev/cookbook/effects/drag-a-widget
 class DraggingProduct extends StatelessWidget {

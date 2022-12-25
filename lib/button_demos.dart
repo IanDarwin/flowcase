@@ -50,7 +50,7 @@ class _ButtonDemosState extends State<ButtonDemos> {
             ),
 
             DropdownButton(
-              value: "Select:",
+              value: "One",
               items: const [
                 DropdownMenuItem(value: "One", child: Text("One")),
                 DropdownMenuItem(value: "Two", child: Text("Two")),

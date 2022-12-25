@@ -48,157 +48,167 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
         leading: GestureDetector(
-          onTap: () { Scaffold.of(context).openDrawer(); },
+          onTap: () {
+            Scaffold.of(context).openDrawer();
+          },
           child: const Icon(
-            Icons.menu,  // add custom icons also
+            Icons.menu, // add custom icons also
           ),
         ),
         actions: <Widget>[
           Padding(
-              padding: const EdgeInsets.only(right: 20.0),
-              child: GestureDetector(
-                onTap: () { debugPrint("Search Tap"); },
-                child: const Icon(
-                  Icons.search,
-                  size: 26.0,
-                ),
+            padding: const EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              onTap: () {
+                debugPrint("Search Tap");
+              },
+              child: const Icon(
+                Icons.search,
+                size: 26.0,
               ),
+            ),
           ),
           Padding(
-              padding: const EdgeInsets.only(right: 20.0),
-              child: GestureDetector(
-                onTap: () { Scaffold.of(context).openDrawer(); },
-                child: const Icon(
-                    Icons.more_vert
-                ),
+            padding: const EdgeInsets.only(right: 20.0),
+            child: GestureDetector(
+              onTap: () {
+                Scaffold.of(context).openDrawer();
+              },
+              child: const Icon(
+                  Icons.more_vert
               ),
+            ),
           ),
         ],
       ),
       drawer: NavDrawer(),
-      body:  GridView.count(
-          crossAxisCount: 2,
-          childAspectRatio: 2.5,
-          children: [
-            // Most of these use our own Wrapper but a few do not; edit w/ care.
-            ElevatedButton(
-              child: const Text("Button Demo"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Buttons', ButtonDemos())));
-              },
-            ),
-            ElevatedButton(
-              child: const Text("Card Demo"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Cards', CardDemos())));
-              },
-            ),
-            ElevatedButton(
-              child: const Text("Dialog Demo"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Dialog', DialogDemos())));
-              },
-            ),
-            ElevatedButton(
-              child: const Text("Drag-n-Drop Demo"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Shop til you drop', DragDropDemo())));
-              },
-            ),
-            ElevatedButton(
-              child: const Text("Layout Demo"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Layouts', LayoutDemos())));
-              },
-            ),
-            ElevatedButton(
-              child: const Text("List Demo"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Lists', ListDemos())));
-              },
-            ),
-            ElevatedButton(
-              child: const Text("ListTile Demo"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('ListTile', ListTileDemos())));
-              },
-            ),
-            ElevatedButton(
-              child: const Text("Login Screen Demo"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => Wrapper('Login Screen', AuthForm(key: UniqueKey()))));
-              },
-            ),
-            ElevatedButton(
-              child: const Text("SnackBar Demo"),
-              onPressed: () {
-                _showSnackBar(context);
-              },
-            ),
-            ElevatedButton(
-              child: const Text("Table Demo"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => Wrapper('Tables', TableDemo())));
-              },
-            ),
-            ElevatedButton(
-              child: const Text("Tabs Demo"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                  // Does not need Wrapper()
-                    builder: (context) => TabsDemo()));
-              },
-            ),
-            ElevatedButton(
-              child: const Text("Text Demo"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Text', TextDemos())));
-              },
-            ),
-            ElevatedButton(
-              child: const Text("Animation"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Text', AnimationApp())));
-              },
-            ),
-            TextButton(
-              child: const Text("About"),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => Wrapper('About LTDemo', About())));
-              },
-            ),
-          ],
+      body: GridView.count(
+        crossAxisCount: 2,
+        childAspectRatio: 2.5,
+        children: [
+          // Most of these use our own Wrapper but a few do not; edit w/ care.
+          ElevatedButton(
+            child: const Text("Button Demo"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) =>
+                  const Wrapper('Push My Buttons', ButtonDemos())));
+            },
+          ),
+          ElevatedButton(
+            child: const Text("Card Demo"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => const Wrapper('Cards', CardDemos())));
+            },
+          ),
+          ElevatedButton(
+            child: const Text("Dialog Demo"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) =>
+                  const Wrapper('Dialog', DialogDemos())));
+            },
+          ),
+          ElevatedButton(
+            child: const Text("Drag-n-Drop Demo"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) =>
+                  const Wrapper('Shop til you drop', DragDropDemo())));
+            },
+          ),
+          ElevatedButton(
+            child: const Text("Layout Demo"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) =>
+                  const Wrapper('Layouts', LayoutDemos())));
+            },
+          ),
+          ElevatedButton(
+            child: const Text("List Demo"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => const Wrapper('Lists', ListDemos())));
+            },
+          ),
+          ElevatedButton(
+            child: const Text("ListTile Demo"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) =>
+                  const Wrapper('ListTile', ListTileDemos())));
+            },
+          ),
+          ElevatedButton(
+            child: const Text("Login Screen Demo"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) =>
+                      Wrapper('Login Screen', AuthForm(key: UniqueKey()))));
+            },
+          ),
+          ElevatedButton(
+            child: const Text("SnackBar Demo"),
+            onPressed: () {
+              showUndeleteSnackbar(context, "Item #123");
+            },
+          ),
+          ElevatedButton(
+            child: const Text("Table Demo"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => Wrapper('Tables', TableDemo())));
+            },
+          ),
+          ElevatedButton(
+            child: const Text("Tabs Demo"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                // Does not need Wrapper()
+                  builder: (context) => TabsDemo()));
+            },
+          ),
+          ElevatedButton(
+            child: const Text("Text Demo"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => const Wrapper('Text', TextDemos())));
+            },
+          ),
+          ElevatedButton(
+            child: const Text("Animation"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => const Wrapper('Text', AnimationApp())));
+            },
+          ),
+          TextButton(
+            child: const Text("About"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => Wrapper('About LTDemo', About())));
+            },
+          ),
+        ],
       ),
     );
-  }
-
-  final String item = "Item #123";
-
-  void _showSnackBar(BuildContext context) {
-    final snackBar = SnackBar(
-      content: Text("Deleted $item"),
-      action: SnackBarAction(
-        label: "Undo",
-        onPressed: () => debugPrint("Would undo delete of $item"),
-      ),
-    );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }
+
+void showUndeleteSnackbar(BuildContext context, String item) {
+  final snackBar = SnackBar(
+    content: Text("Deleted $item"),
+    action: SnackBarAction(
+      label: "Undo",
+      onPressed: () => debugPrint("Would undo delete of $item"),
+    ),
+  );
+  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+}
+

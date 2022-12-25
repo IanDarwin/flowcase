@@ -1,6 +1,9 @@
 = flutterdemos
 
 A demo app that runs a bunch of self-contained Flutter demos.
+Most are winnowed down to their minimum for
+easier understanding than some of the official
+demos which IMHO have a bit of rhetorical flourish that at least takes longer to read.
 
 == TODO
 

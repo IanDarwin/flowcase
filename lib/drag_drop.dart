@@ -93,7 +93,8 @@ class _DragDropDemoState extends State<DragDropDemo> {
     setState(() {
       cartItems.add(product);
     });
-    showUndoSnackbar(context, "Added ${product.productName}");
+    showUndoSnackbar(context, "Added ${product.productName}",
+      () => setState(() => cartItems.remove(product)));
   }
 }
 

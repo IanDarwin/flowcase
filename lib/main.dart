@@ -159,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ElevatedButton(
             child: const Text("SnackBar Demo"),
             onPressed: () { // Done here in main Widget
-              showUndoSnackbar(context, "Deleted Item #123");
+              showUndoSnackbar(context, "Deleted Item #123", () => {});
             },
           ),
           ElevatedButton(
@@ -204,12 +204,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-void showUndoSnackbar(BuildContext context, String message) {
+void showUndoSnackbar(BuildContext context, String message, Function undoer) {
   final snackBar = SnackBar(
     content: Text(message),
     action: SnackBarAction(
       label: "Undo",
-      onPressed: () => debugPrint("Would undo '$message'"),
+      onPressed: () {
+        debugPrint("Undoing '$message'");
+        undoer();
+      }
     ),
   );
   ScaffoldMessenger.of(context).showSnackBar(snackBar);

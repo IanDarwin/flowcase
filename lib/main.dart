@@ -1,7 +1,7 @@
+import 'package:counter_demo/drag_drop.dart';
 import 'package:counter_demo/layout_demos.dart';
 import 'package:counter_demo/login_screen.dart';
 import 'package:counter_demo/nav_drawer.dart';
-import 'package:counter_demo/snackbar_demo.dart';
 import 'package:counter_demo/tab_demo.dart';
 import 'package:counter_demo/text_demos.dart';
 import 'package:counter_demo/wrapper.dart';
@@ -105,6 +105,13 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) => const Wrapper('Dialog', DialogDemos())));
+              },
+            ),
+            ElevatedButton(
+              child: const Text("Drag-n-Drop Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => const Wrapper('Shop til you drop', DragDropDemo())));
               },
             ),
             ElevatedButton(

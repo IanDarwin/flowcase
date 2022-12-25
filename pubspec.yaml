@@ -30,7 +30,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - images/logo.png
+    - images/
 
 flutter_icons:
   android: true

@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: GridView.count(
         crossAxisCount: 2,
         childAspectRatio: 2.5,
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         mainAxisSpacing: 5.0,
         crossAxisSpacing: 5.0,
         children: [
@@ -173,8 +173,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: const Text("Tabs Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
-                // Does not need Wrapper()
-                  builder: (context) => TabsDemo()));
+                  // Does not need Wrapper()
+                  builder: (context) => const TabsDemo()));
             },
           ),
           ElevatedButton(

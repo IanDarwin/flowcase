@@ -9,6 +9,8 @@ class CardDemos extends StatefulWidget {
   }
 }
 
+// Draws one "plain" rectangle and one with
+// a rounded border to look better.
 class _CardDemosState extends State<CardDemos> {
   @override
   Widget build(BuildContext context) {
@@ -33,8 +35,12 @@ class _CardDemosState extends State<CardDemos> {
               )
           ),
           Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
               color: Colors.amberAccent,
               child: SizedBox(
+
                   width: 250,
                   height: 100,
                   child: InkWell(

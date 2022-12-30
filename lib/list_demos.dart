@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'dialog_demos.dart';
+
 class ListDemos extends StatefulWidget {
   const ListDemos({super.key});
 
@@ -32,19 +34,77 @@ List<Person> people = [
 ];
 
 class ListDemosState extends State<ListDemos> {
+  Offset _pos = Offset.zero;
   @override
   Widget build(BuildContext context) {
-    List<Text> list = [];
+    List<Widget> list = [];
     for (Person p in people) {
-      list.add(Text(
-        "${p.lastName}, ${p.firstName}",
-        style: Theme.of(context).textTheme.headline5,
-      ));
+      list.add(GestureDetector(
+        onTapDown: (d) {_getTapPosition(d);},
+        onTap: () => alert(context, "No details available", title: "Details"),
+        onLongPress: () {
+          final RenderObject? overlay =
+            Overlay.of(context)?.context.findRenderObject();
+          showMenu(
+            context: context,
+            position: RelativeRect.fromRect(
+                Rect.fromLTWH(_pos.dx, _pos.dy, 50, 50),
+                Rect.fromLTWH(0, 0, overlay!.paintBounds.size.width,
+                    overlay.paintBounds.size.height)),
+            items: <PopupMenuEntry>[
+              PopupMenuItem(
+                onTap: () async => _edit(context),
+                child: Row(
+                  children: const <Widget>[
+                    Icon(Icons.edit),
+                    Text("Edit"),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                onTap: () async => _delete(context),
+                child: Row(
+                  children: const <Widget>[
+                    Icon(Icons.delete),
+                    Text("Delete"),
+                  ],
+                ),
+              ),
+            ],
+          );
+        },
+        child: Text(
+          "${p.lastName}, ${p.firstName}",
+          style: Theme.of(context)
+              .textTheme
+              .headline5,
+        ),
+      )
+      );
     }
-    return ListView(
-      controller: MyListController(),
-      children: list,
-    );
+      return ListView(
+        controller: MyListController(),
+        children: list,
+      );
+  }
+
+  void _getTapPosition(TapDownDetails tapPosition) {
+    final RenderBox referenceBox = context.findRenderObject() as RenderBox;
+    _pos = referenceBox.globalToLocal(tapPosition.globalPosition);
+    debugPrint(_pos.toString());
+  }
+
+  _edit(context) async {
+    debugPrint("Edit");
+    Navigator.pop(context);
+    await alert(context, "Read-only, sorry", title: "No can do");
+  }
+  
+  _delete(context) async {
+    debugPrint("Delete");
+    Navigator.pop(context);
+    await alert(context, "Read-only, sorry", title: "No can do");
+
   }
 }
 

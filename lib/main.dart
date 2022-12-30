@@ -48,6 +48,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var shape = MaterialStateProperty.all<RoundedRectangleBorder>(
+        RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+        )
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -95,6 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           // Most of these use our own Wrapper but a few do not; edit w/ care.
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("Button Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
@@ -103,6 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("Card Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
@@ -110,6 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("Dialog Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
@@ -118,6 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("Drag-n-Drop Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
@@ -126,6 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("Layout Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
@@ -134,6 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("List Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
@@ -141,6 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("ListTile Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
@@ -149,6 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("Login Screen Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
@@ -157,12 +170,14 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("SnackBar Demo"),
             onPressed: () { // Done here in main Widget
               showUndoSnackbar(context, "Deleted Item #123", () => {});
             },
           ),
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("Table Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
@@ -170,6 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("Tabs Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
@@ -178,6 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("Text Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
@@ -185,6 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           ElevatedButton(
+            style: ButtonStyle(shape: shape),
             child: const Text("Animation"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(

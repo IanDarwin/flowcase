@@ -21,8 +21,8 @@ class _DialogDemosState extends State<DialogDemos> {
           )),
           Center(child: ElevatedButton(
             child: const Text("Two Button Dialog"),
-            onPressed: () => alertWithActions(context, 'A Smarter Message',
-                <Widget>[
+            onPressed: () => alert(context, 'A Smarter Message',
+                actions: <Widget>[
                   ElevatedButton(
                   onPressed: () => Navigator.pop(context),
                   child: const Text("Close Button"),
@@ -39,19 +39,20 @@ class _DialogDemosState extends State<DialogDemos> {
   }
 }
 
-alert(BuildContext context, String message, {title = 'Error', myActions}) async {
-  var actions = myActions ?? <Widget>[];
-  showDialog<int>(
+alert(BuildContext context, String message, {title = 'Error', actions}) async {
+  debugPrint("alert('$message')");
+  showDialog<void>(
       context: context,
-      barrierDismissible: false, // must tap a button to dismiss
+      barrierDismissible: true, // must tap a button to dismiss
       builder: (BuildContext context) {
+        print("Building...");
         return AlertDialog(
           title: Text(title),
           content: Text(message),
-          actions: <Widget>[
+          actions: actions ?? <Widget>[
             TextButton(
               child: const Text('OK'),
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () => Navigator.pop(context),
             ),
           ],
         );
@@ -59,21 +60,4 @@ alert(BuildContext context, String message, {title = 'Error', myActions}) async 
   );
 }
 
-alertWithActions(BuildContext context, String message,  actions,
-    {title = 'Error'}) {
-  showDialog<int>(
-      context: context,
-      barrierDismissible: false, // must tap a button to dismiss
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(title),
-          content: SingleChildScrollView(
-            // SingleChildScrollView only needed if content large
-            child: Text(message),
-          ),
-          actions: actions,
-        );
-      }
-  );
-}
 

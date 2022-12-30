@@ -40,12 +40,12 @@ class ListDemosState extends State<ListDemos> {
     List<Widget> list = [];
     for (Person p in people) {
       list.add(GestureDetector(
-        onTapDown: (d) {_getTapPosition(d);},
+        onTapDown: (pos) {_getTapPosition(pos);},
         onTap: () => alert(context, "No details available", title: "Details"),
-        onLongPress: () {
+        onLongPress: () async {
           final RenderObject? overlay =
             Overlay.of(context)?.context.findRenderObject();
-          showMenu(
+          await showMenu(
             context: context,
             position: RelativeRect.fromRect(
                 Rect.fromLTWH(_pos.dx, _pos.dy, 50, 50),
@@ -82,32 +82,25 @@ class ListDemosState extends State<ListDemos> {
       )
       );
     }
-      return ListView(
-        controller: MyListController(),
-        children: list,
-      );
+    return ListView(
+      children: list,
+    );
   }
 
   void _getTapPosition(TapDownDetails tapPosition) {
     final RenderBox referenceBox = context.findRenderObject() as RenderBox;
     _pos = referenceBox.globalToLocal(tapPosition.globalPosition);
-    debugPrint(_pos.toString());
   }
 
   _edit(context) async {
     debugPrint("Edit");
     Navigator.pop(context);
-    await alert(context, "Read-only, sorry", title: "No can do");
+    alert(context, "Read-only, sorry", title: "No can do");
   }
-  
+
   _delete(context) async {
     debugPrint("Delete");
+    alert(context, "Read-only, sorry", title: "No can do");
     Navigator.pop(context);
-    await alert(context, "Read-only, sorry", title: "No can do");
-
   }
-}
-
-class MyListController extends ScrollController {
-  // Nothing
 }

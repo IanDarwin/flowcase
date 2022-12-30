@@ -92,15 +92,19 @@ class ListDemosState extends State<ListDemos> {
     _pos = referenceBox.globalToLocal(tapPosition.globalPosition);
   }
 
+  // The PopupMenuItem.onTap does its own Navigator.pop,
+  // so we use Future.delayed() to "delay" arount the pop.
   _edit(context) async {
     debugPrint("Edit");
-    Navigator.pop(context);
-    alert(context, "Read-only, sorry", title: "No can do");
+    Future.delayed(
+        const Duration(seconds: 0),
+            () =>  alert(context, "Read-only, sorry", title: "Can't Edit"));
   }
 
   _delete(context) async {
     debugPrint("Delete");
-    alert(context, "Read-only, sorry", title: "No can do");
-    Navigator.pop(context);
+    Future.delayed(
+        const Duration(seconds: 0),
+    () => alert(context, "Read-only, sorry", title: "Unable to delete"));
   }
 }

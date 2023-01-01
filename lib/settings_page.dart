@@ -31,7 +31,7 @@ class SettingsState extends State<SettingsPage> {
               children: [
                 TextInputSettingsTile(
                   title: "Name",
-                  settingKey: Constants.KEY_NAME,
+                  settingKey: Constants.keyForName,
                   keyboardType: TextInputType.name,
                   validator: (name) {
                     if (name!.isNotEmpty) {
@@ -43,7 +43,7 @@ class SettingsState extends State<SettingsPage> {
                 ),
                 TextInputSettingsTile(
                   title: "Email",
-                  settingKey: Constants.KEY_EMAIL,
+                  settingKey: Constants.keyForEmail,
                   keyboardType: TextInputType.emailAddress,
                   validator: (str) {
                     if (str!.isNotEmpty) {
@@ -55,7 +55,7 @@ class SettingsState extends State<SettingsPage> {
                 ),
                 TextInputSettingsTile(
                   title: "Phone Number",
-                  settingKey: Constants.KEY_PHONE,
+                  settingKey: Constants.keyForPhone,
                   keyboardType: TextInputType.phone,
                   validator: (phNum) {
                     if (phNum!.isNotEmpty) {
@@ -68,7 +68,7 @@ class SettingsState extends State<SettingsPage> {
                 ),
                 TextInputSettingsTile(
                   title: "PIN code",
-                  settingKey: Constants.KEY_PIN_CODE,
+                  settingKey: Constants.keyForPINCode,
                   keyboardType: const TextInputType.numberWithOptions(signed:false, decimal:false),
                   validator: (pinCode) {
                     // The code is a 4-digit instr number + the 5-digit constant value
@@ -87,7 +87,7 @@ class SettingsState extends State<SettingsPage> {
             children: [
               DropDownSettingsTile<int>(
                 title: 'Default Trip Length',
-                settingKey: Constants.KEY_TRIP_LENGTH,
+                settingKey: Constants.keyForTripLength,
                   selected: 3,
                   values: const {
                   1: "1",
@@ -99,7 +99,7 @@ class SettingsState extends State<SettingsPage> {
               ),
               SwitchSettingsTile(
                 leading: const Icon(Icons.calendar_today_rounded),
-                settingKey: Constants.KEY_SAVE_TO_CAL,
+                settingKey: Constants.keyForSaveToCalendar,
                 title: 'Add new trips to device calendar',
                 onChange: (value) {
                   debugPrint('$Constants.KEY_SAVE_TO_CAL: $value');
@@ -113,7 +113,7 @@ class SettingsState extends State<SettingsPage> {
               SwitchSettingsTile(
                 title: "Dark mode",
                   leading: const Icon(Icons.dark_mode),
-                  settingKey: Constants.KEY_DARK_MODE,
+                  settingKey: Constants.keyForDarkMode,
                   onChange: (val) {
                     alert(context, "Change will take effect on app restart",
                         title:'Dark Mode ${val?'on':'off'}');
@@ -134,11 +134,11 @@ class SettingsState extends State<SettingsPage> {
 // The values used here don't matter, but must be unique,
 // and having them all in one place is good for maintenance.
 class Constants {
-	static const KEY_NAME = "key_name";
-  static const KEY_EMAIL = "key_email_addr";
-	static const KEY_PHONE = "key_phone_num";
-	static const KEY_PIN_CODE = "key_pin_code";
-	static const KEY_TRIP_LENGTH = "key_trip_length";
-	static const KEY_SAVE_TO_CAL = "key_save_to_calendar";
-	static const KEY_DARK_MODE = "key_use_dark_mode";
+	static const keyForName = "key_name";
+  static const keyForEmail = "key_email_addr";
+	static const keyForPhone = "key_phone_num";
+	static const keyForPINCode = "key_pin_code";
+	static const keyForTripLength = "key_trip_length";
+	static const keyForSaveToCalendar = "key_save_to_calendar";
+	static const keyForDarkMode = "key_use_dark_mode";
 }

@@ -1,10 +1,13 @@
+import 'package:counter_demo/settings_page.dart';
 import 'package:counter_demo/wrapper.dart';
 import 'package:flutter/material.dart';
 
 import 'about.dart';
 
 class NavDrawer extends StatelessWidget {
+  const NavDrawer({super.key});
 
+  @override
   build(context) {
     return Drawer(
       child: ListView(
@@ -30,14 +33,17 @@ class NavDrawer extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.settings),
               title: const Text('Settings'),
-              onTap: () => {},
+              onTap: () => {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => const SettingsPage()))
+              },
             ),
             ListTile(
               leading: const Icon(Icons.info),
               title: const Text('About MyApp'),
               onTap: () => {
                 Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => Wrapper('About LTDemo', About())))
+                  builder: (context) => const Wrapper('About LTDemo', About())))
               }
             ),
           ]),

@@ -12,25 +12,25 @@ class ListDemos extends StatefulWidget {
 }
 
 class Person {
-  final String firstName, lastName;
-  const Person(this.firstName, this.lastName);
+  final String firstName, lastName, occupation;
+  const Person(this.firstName, this.lastName, this.occupation);
 }
 
 List<Person> people = [
-  const Person("Boris", "Johnson"),
-  const Person("Annie", "Smith"),
-  const Person("Robin", "Jones"),
-  const Person("Ethiah", "Jenkins"),
-  const Person("J.", "Adams"),
-  const Person("George", "Washington"),
-  const Person("Barack", "Obama"),
-  const Person("Volodymyr", "Zelensky"),
-  const Person("Ian", "Darwin"),
-  const Person("Bill", "The Cat"),
-  const Person("Julian", "Lightray"),
-  const Person("Christopher", "Gomersall"),
-  const Person("Donald", "Knuth"),
-  const Person("Edward", "Teller")
+  const Person("Boris", "Johnson", "Ex-PM of the UK"),
+  const Person("Annie", "Smith", "Unknown"),
+  const Person("Robin", "Jones", "Unknown"),
+  const Person("Ethiah", "Jenkins", "Shady alias"),
+  const Person("J.", "Adams", "Signer of the Declaration"),
+  const Person("George", "Washington", "Ex-President of the US"),
+  const Person("Barack", "Obama", "Ex-President of the US"),
+  const Person("Volodymyr", "Zelensky", "Actor, President of Україні"),
+  const Person("Ian", "Darwin", "Jack of all trades"),
+  const Person("Bill", "The Cat", "Comedian"),
+  const Person("Julian", "Lightray", "Unlisted but brilliant"),
+  const Person("Christopher", "Gomersall", "Photographer"),
+  const Person("Donald", "Knuth", "Computer Scientist"),
+  const Person("Edward", "Teller", "Physicist"),
 ];
 
 class ListDemosState extends State<ListDemos> {
@@ -41,7 +41,7 @@ class ListDemosState extends State<ListDemos> {
     for (Person p in people) {
       list.add(GestureDetector(
         onTapDown: (pos) {_getTapPosition(pos);},
-        onTap: () => alert(context, "No details available", title: "Details"),
+        onTap: () => alert(context, p.occupation, title: "Details"),
         onLongPress: () async {
           final RenderObject? overlay =
             Overlay.of(context)?.context.findRenderObject();

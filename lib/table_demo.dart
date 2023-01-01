@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TableDemo extends StatefulWidget {
-  Key? key;
 
-  TableDemo({super.key});
+  const TableDemo({super.key});
 
   @override
   State<StatefulWidget> createState() {
@@ -16,7 +15,7 @@ class _TableDemoState extends State<TableDemo> {
   Widget build(BuildContext context) {
     return Column(
         children: [
-          Text("Basic Table"),
+          const Text("Basic Table"),
           Container(
             height: 200,
             padding: const EdgeInsets.all(7),
@@ -64,7 +63,7 @@ class _TableDemoState extends State<TableDemo> {
           ),
 
           // SECOND TABLE
-          Text("Table() with a bit of style"),
+          const Text("Table() with a bit of style"),
           Container(
             padding: const EdgeInsets.all(7),
             child: Table(
@@ -105,7 +104,7 @@ class _TableDemoState extends State<TableDemo> {
           ),
 
           // THIRD TABLE
-          Text("DataTable"),
+          const Text("DataTable"),
           Container(
               padding: const EdgeInsets.all(7),
               child: DataTable(

@@ -45,7 +45,6 @@ alert(BuildContext context, String message, {title = 'Error', actions}) async {
       context: context,
       barrierDismissible: true, // must tap a button to dismiss
       builder: (BuildContext context) {
-        print("Building...");
         return AlertDialog(
           title: Text(title),
           content: Text(message),

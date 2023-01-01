@@ -16,13 +16,15 @@ class About extends StatelessWidget {
 <p>Course prepared by <a href="https://darwinsys.com/">Ian Darwin, Rejminet Group Inc.</a></p>
 </html>
 """;
+
+  const About({super.key});
   @override
   Widget build(BuildContext context) {
     return Html(
         data: htmlText,
         onLinkTap: (String? url, RenderContext context,
             Map<String, String> attributes,
-            dynamic? element) async {
+            dynamic element) async {
           await launchUrl(Uri.parse(url!),
               mode: LaunchMode.inAppWebView);
         }

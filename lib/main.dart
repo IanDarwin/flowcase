@@ -6,6 +6,7 @@ import 'package:counter_demo/tab_demo.dart';
 import 'package:counter_demo/text_demos.dart';
 import 'package:counter_demo/wrapper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_settings_screens/flutter_settings_screens.dart';
 
 import 'about.dart';
 import 'animation_demo.dart';
@@ -16,7 +17,8 @@ import 'list_demos.dart';
 import 'list_tile_demo.dart';
 import 'table_demo.dart';
 
-void main() {
+void main() async {
+  Settings.init();
   runApp(const MyApp());
 }
 
@@ -90,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      drawer: NavDrawer(),
+      drawer: const NavDrawer(),
       body: GridView.count(
         crossAxisCount: 2,
         childAspectRatio: 2.5,
@@ -181,7 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: const Text("Table Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => Wrapper('Tables', TableDemo())));
+                  builder: (context) => const Wrapper('Tables', TableDemo())));
             },
           ),
           ElevatedButton(
@@ -213,7 +215,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: const Text("About"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => Wrapper('About LTDemo', About())));
+                  builder: (context) => const Wrapper('About LTDemo', About())));
             },
           ),
         ],

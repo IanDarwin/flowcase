@@ -37,17 +37,15 @@ class _TabsDemoState extends State<TabsDemo> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tabs Demo'),
+        title: const Text('Tabs Demo'),
         bottom: TabBar(
           controller: tc,
           tabs: tabs,
         ),
       ),
-      body:Container(
-        child: TabBarView(
-          controller: tc,
-          children: tabHandlers,
-        ),
+      body:TabBarView(
+        controller: tc,
+        children: tabHandlers,
       ),
     );
   }
@@ -65,7 +63,7 @@ class _ArrivalTabState extends State<_ArrivalTab> {
 
   @override
   Widget build(BuildContext context) {
-    print("_ArrivalStateTab building $this");
+    debugPrint("_ArrivalStateTab building $this");
     return const Center(child: Text("You are here!"));
   }
 }
@@ -82,7 +80,7 @@ class _DepartureTabState extends State<_DepartureTab> {
 
   @override
   Widget build(BuildContext context) {
-    print("_ArrivalStateTab building $this");
+    debugPrint("_ArrivalStateTab building $this");
     return const Center(child: Text("Have a nice trip!"));
   }
 }

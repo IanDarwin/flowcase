@@ -26,8 +26,8 @@ class LayoutState extends State<LayoutDemos> {
           title:  Text("ListTile Demo Title",
               style: Theme.of(context).textTheme.headline6
           ),
-          subtitle: Text("SubTitle"),
-          trailing: Text("Trailing"),
+          subtitle: const Text("SubTitle"),
+          trailing: const Text("Trailing"),
         ),
         Card(
           child: ListTile(
@@ -40,14 +40,12 @@ class LayoutState extends State<LayoutDemos> {
             trailing: const Text("Trailing"),
           ),
         ),
-        Container(child: Text("Here's a simple Container Child Text",
-            style: Theme.of(context).textTheme.headline6)
-        ),
+        Text("Here's a simple Container Child Text",
+            style: Theme.of(context).textTheme.headline6),
         Container(height: 20,),
-        Container(child: Text("And a Grid Layout with Text:",
-            style: Theme.of(context).textTheme.headline6)
-        ),
-        Container(
+        Text("And a Grid Layout with Text:",
+            style: Theme.of(context).textTheme.headline6),
+        SizedBox(
           height: 400,
           child: GridView.count(
             crossAxisCount: 3,

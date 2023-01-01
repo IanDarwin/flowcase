@@ -5,13 +5,13 @@ import 'package:flutter/foundation.dart';
 import "package:flutter/material.dart";
 
 class AuthForm extends StatefulWidget {
-  AuthForm({required Key key}) : super(key: key);
+  const AuthForm({required Key key}) : super(key: key);
 
   @override
-  _AuthFormState createState() => _AuthFormState();
+  AuthFormState createState() => AuthFormState();
 }
 
-class _AuthFormState extends State<AuthForm> {
+class AuthFormState extends State<AuthForm> {
   var isLogIn = true;
   var _userEmail = '';
   var _userPass = '';
@@ -25,9 +25,9 @@ class _AuthFormState extends State<AuthForm> {
     if (isValid!) {
       _formKey.currentState?.save();
 
-      print(_userEmail);
-      print(_userPass);
-      print(_userUsername);
+      debugPrint(_userEmail);
+      debugPrint(_userPass);
+      debugPrint(_userUsername);
     }
   }
 
@@ -36,9 +36,9 @@ class _AuthFormState extends State<AuthForm> {
     return Center(
       child: Card(
         elevation: 20,
-        margin: EdgeInsets.all(20),
+        margin: const EdgeInsets.all(20),
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Form(
               key: _formKey,
               child: Column(
@@ -46,7 +46,7 @@ class _AuthFormState extends State<AuthForm> {
                 children: [
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(labelText: "Email"),
+                    decoration: const InputDecoration(labelText: "Email"),
                     validator: (value) {
                       if (value!.isEmpty || !value.contains("@")) {
                         return "Please Enter a Valid Email";
@@ -60,7 +60,7 @@ class _AuthFormState extends State<AuthForm> {
                   if (!isLogIn)
                     TextFormField(
                       keyboardType: TextInputType.name,
-                      decoration: InputDecoration(labelText: "User Name"),
+                      decoration: const InputDecoration(labelText: "User Name"),
                       validator: (value) {
                         if (value!.isEmpty || value.length < 4) {
                           return "Please Enter Atleast 4 Charecter";
@@ -73,7 +73,7 @@ class _AuthFormState extends State<AuthForm> {
                     ),
                   TextFormField(
                     keyboardType: TextInputType.visiblePassword,
-                    decoration: InputDecoration(labelText: "Password"),
+                    decoration: const InputDecoration(labelText: "Password"),
                     obscureText: true,
                     validator: (value) {
                       if (value!.isEmpty || value.length < 7) {
@@ -90,16 +90,16 @@ class _AuthFormState extends State<AuthForm> {
                   ),
                   ElevatedButton(
                     onPressed: _trySubmit,
-                    child: Padding(
-                      padding: EdgeInsets.all(4),
-                      child: Text(
-                        isLogIn ? "Log In" : "Sign Up",
-                        style: TextStyle(fontSize: 25),
-                      ),
-                    ),
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(4),
+                      child: Text(
+                        isLogIn ? "Log In" : "Sign Up",
+                        style: const TextStyle(fontSize: 25),
                       ),
                     ),
                   ),

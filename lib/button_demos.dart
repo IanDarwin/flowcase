@@ -18,7 +18,7 @@ class _ButtonDemosState extends State<ButtonDemos> {
             // A TextButton has no border or background by default
             TextButton(
               onPressed: () => debugPrint("TextButton pressed"),
-              child: Text("Push me"),
+              child: const Text("Push me"),
             ),
 
             // The common MaterialButton
@@ -62,7 +62,7 @@ class _ButtonDemosState extends State<ButtonDemos> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => debugPrint("FAB pressed"),
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

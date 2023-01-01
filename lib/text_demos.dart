@@ -23,7 +23,7 @@ both mobile (Android, iOS) and desktop (Linux, macOS, Windows).
         child: Column(
           children: [
             // Plain Text uses default
-            Text("This is simple text"),
+            const Text("This is simple text"),
             // Text.rich() lets you stylize individual words/segments
             const Text.rich(
               TextSpan(
@@ -45,7 +45,7 @@ both mobile (Android, iOS) and desktop (Linux, macOS, Windows).
                 data: htmlText,
                 onLinkTap: (String? url, RenderContext context,
                     Map<String, String> attributes,
-                    dynamic? element) async {
+                    dynamic element) async {
                   await launchUrl(Uri.parse(url!),
                       mode: LaunchMode.inAppWebView);
                 }

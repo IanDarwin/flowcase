@@ -48,45 +48,41 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 class _MyHomePageState extends State<MyHomePage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     var shape = MaterialStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(10.0),
         )
     );
     return Scaffold(
       appBar: AppBar(
+        key: _scaffoldKey,
         title: Text(widget.title),
-        leading: GestureDetector(
-          onTap: () {
-            Scaffold.of(context).openDrawer();
-          },
-          child: const Icon(
-            Icons.menu, // add custom icons also
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () => Scaffold.of(context).openDrawer(),
           ),
         ),
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
-            child: GestureDetector(
-              onTap: () {
-                debugPrint("Search Tap");
-              },
-              child: const Icon(
-                Icons.search,
-                size: 26.0,
+            child: Builder(
+              builder: (context) => IconButton(
+                icon: const Icon(Icons.search),
+                onPressed: () => alert(context, "Search disabled", title: "Sorry"),
               ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
-            child: GestureDetector(
-              onTap: () {
-                Scaffold.of(context).openDrawer();
-              },
-              child: const Icon(
-                  Icons.more_vert
+            child: Builder(
+              builder: (context) => IconButton(
+                icon: const Icon(Icons.more_vert),
+                onPressed: () => Scaffold.of(context).openDrawer(),
               ),
             ),
           ),
@@ -191,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: const Text("Tabs Demo"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
-                  // Does not need Wrapper()
+                // Does not need Wrapper()
                   builder: (context) => const TabsDemo()));
             },
           ),
@@ -228,11 +224,11 @@ void showUndoSnackbar(BuildContext context, String message, Function undoer) {
   final snackBar = SnackBar(
     content: Text(message),
     action: SnackBarAction(
-      label: "Undo",
-      onPressed: () {
-        debugPrint("Undoing '$message'");
-        undoer();
-      }
+        label: "Undo",
+        onPressed: () {
+          debugPrint("Undoing '$message'");
+          undoer();
+        }
     ),
   );
   ScaffoldMessenger.of(context).showSnackBar(snackBar);

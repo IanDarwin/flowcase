@@ -48,8 +48,6 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 class _MyHomePageState extends State<MyHomePage> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context) {
     var shape = MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -59,7 +57,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     return Scaffold(
       appBar: AppBar(
-        key: _scaffoldKey,
         title: Text(widget.title),
         leading: Builder(
           builder: (context) => IconButton(

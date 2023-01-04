@@ -14,7 +14,7 @@ class CardDemos extends StatefulWidget {
 class _CardDemosState extends State<CardDemos> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         Card(
             color: Colors.greenAccent,

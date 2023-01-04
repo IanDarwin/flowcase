@@ -19,7 +19,7 @@ class _AnimationAppState extends State<AnimationApp> with SingleTickerProviderSt
     super.initState();
     controller =
         AnimationController(duration: const Duration(seconds: 3), vsync: this);
-    animation = Tween<double>(begin: 0, end: 300).animate(controller)
+    animation = Tween<double>(begin: 0, end: 175).animate(controller)
       ..addListener(() {
         setState(() {
           // Don't need to set anything here; the animation's state has changed

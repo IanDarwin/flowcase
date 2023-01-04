@@ -34,7 +34,7 @@ class _DragDropDemoState extends State<DragDropDemo> {
   final GlobalKey _draggableKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
         children: [
           const Padding(
             padding: EdgeInsets.all(10),

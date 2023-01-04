@@ -13,7 +13,7 @@ class TableDemo extends StatefulWidget {
 class _TableDemoState extends State<TableDemo> {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
         children: [
           const Text("Basic Table"),
           Container(

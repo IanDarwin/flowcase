@@ -208,9 +208,17 @@ class _MyHomePageState extends State<MyHomePage> {
             child: const Text("About"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => const Wrapper('About LTDemo', About())));
+                  builder: (context) => const Wrapper('About Flutter Demo', About())));
             },
           ),
+          // For the About, could use this shorter form:
+          // const AboutListTile(
+          //   icon: Icon(Icons.info),
+          //   applicationName:  'Flutter Demo',
+          //   aboutBoxChildren: [
+          //     Text("Thanks for trying out this demo!"),
+          //   ],
+          // )
         ],
       ),
     );

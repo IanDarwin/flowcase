@@ -13,6 +13,7 @@ import 'animation_demo.dart';
 import 'button_demos.dart';
 import 'card_demos.dart';
 import 'dialog_demos.dart';
+import 'fade_in_route.dart';
 import 'list_demos.dart';
 import 'list_tile_demo.dart';
 import 'table_demo.dart';
@@ -98,9 +99,8 @@ class _MyHomePageState extends State<MyHomePage> {
             style: ButtonStyle(shape: shape),
             child: const Text("Button Demo"),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) =>
-                  const Wrapper('Push My Buttons', ButtonDemos())));
+              Navigator.push(context, FadeInRoute(
+                  page: const Wrapper('Push My Buttons', ButtonDemos())));
             },
           ),
           ElevatedButton(

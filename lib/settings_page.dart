@@ -62,7 +62,7 @@ class SettingsState extends State<SettingsPage> {
                       return null;
                     }
                     // Maybe check for + () - 0-9 - regex
-                    return "Callable phone name is required";
+                    return "Callable phone number is required";
                   },
                   errorColor: Colors.redAccent,
                 ),
@@ -77,7 +77,7 @@ class SettingsState extends State<SettingsPage> {
                         pinCode.length >= 5) {
                       return null;
                     }
-                    return "Instructor code must be 5+ numeric digits.";
+                    return "PIN code must be 5+ numeric digits.";
                   },
                   errorColor: Colors.redAccent,
                 ),

@@ -1,3 +1,4 @@
+import 'package:counter_demo/canvas.dart';
 import 'package:counter_demo/drag_drop.dart';
 import 'package:counter_demo/layout_demos.dart';
 import 'package:counter_demo/login_screen.dart';
@@ -202,6 +203,14 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
                   builder: (context) => const Wrapper('Text', AnimationApp())));
+            },
+          ),
+          ElevatedButton(
+            style: ButtonStyle(shape: shape),
+            child: const Text("Canvas"),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (context) => const Wrapper('Canvas', SimpleDrawWidget())));
             },
           ),
           TextButton(

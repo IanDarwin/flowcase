@@ -9,9 +9,9 @@ void main() {
 class SimpleDrawWidget extends StatelessWidget {
   const SimpleDrawWidget({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       title: 'Flutter Gfx Demo',
       theme: ThemeData(
@@ -25,10 +25,10 @@ class SimpleDrawWidget extends StatelessWidget {
 }
 
 class FancyPaints extends CustomPainter {
-
   @override
   void paint(Canvas canvas, Size size) {
-    var midPoint = 200.0;
+    var midX = size.width / 2;
+    var midY = size.height / 2;
     const drawColor = Colors.orangeAccent;
     final paint = Paint()
       ..strokeWidth = 7
@@ -36,7 +36,7 @@ class FancyPaints extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     final triangle = Path();
-    triangle.moveTo(midPoint, 200);
+    triangle.moveTo(midX, 200);
     triangle.relativeLineTo(100, -100);
     triangle.relativeLineTo(-200, 0);
     triangle.close();
@@ -45,7 +45,7 @@ class FancyPaints extends CustomPainter {
     paint.style = PaintingStyle.stroke;
     var opacity = 1.0;
     var concentricCircleRadius = 100.0;
-    const center = Offset(200, 300);
+    var center = Offset(midX, 300);
     while (concentricCircleRadius > 0) {
       paint.color = paint.color.withOpacity(opacity -= 0.1);
       canvas.drawCircle(center, concentricCircleRadius, paint);
@@ -56,7 +56,7 @@ class FancyPaints extends CustomPainter {
     paint.color = drawColor;
 
     final triangle2 = Path();
-    triangle2.moveTo(midPoint, 400);
+    triangle2.moveTo(midX, 400);
     triangle2.relativeLineTo(100, 100);
     triangle2.relativeLineTo(-200, 0);
     triangle2.close();

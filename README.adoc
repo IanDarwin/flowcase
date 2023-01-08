@@ -19,5 +19,5 @@ This generates the derivative icon files for all platforms listed in the
 icons section of pubspec.yaml.
 
 == Note
-Later this year I will make this project be a sub-directory in this repo, and move in some other
+In Feb or March I will make this project be a sub-directory in this repo, and move in some other
 demos that stand alone but are too short to be their own repos.

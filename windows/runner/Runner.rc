@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.darwinsys" "\0"
-            VALUE "FileDescription", "flutterdemos" "\0"
+            VALUE "FileDescription", "flowcase" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "flutterdemos" "\0"
+            VALUE "InternalName", "flowcase" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.darwinsys. All rights reserved." "\0"
-            VALUE "OriginalFilename", "flutterdemos.exe" "\0"
-            VALUE "ProductName", "flutterdemos" "\0"
+            VALUE "OriginalFilename", "flowcase.exe" "\0"
+            VALUE "ProductName", "flowcase" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

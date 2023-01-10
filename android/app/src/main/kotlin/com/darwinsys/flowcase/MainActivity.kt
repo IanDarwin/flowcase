@@ -1,4 +1,4 @@
-package com.darwinsys.flutterdemos
+package com.darwinsys.flowcase
 
 import io.flutter.embedding.android.FlutterActivity
 

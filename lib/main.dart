@@ -226,7 +226,8 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             TextButton(
-              child: const Text("About (Custom)"),
+              child: const Text("About (Custom)",
+                style: TextStyle(color: Colors.black)),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) => const Wrapper('About Flowcase', About())));

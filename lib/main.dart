@@ -24,8 +24,8 @@ void main() async {
   runApp(const MyApp());
 }
 
-Color gradientStartColor = const Color(0xff0090b0);
-Color gradientEndColor = const Color(0xffc0549f);
+const Color gradientStartColor = Color(0xff0090b0);
+const Color gradientEndColor = Color(0xffd0549f);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -34,12 +34,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'LT Demo',
+      title: 'Flutter Demos',
       theme: ThemeData(
         // This is the theme of your application.
         primarySwatch: Colors.lightGreen,
       ),
-      home: const MyHomePage(title: 'Learning Tree Flutter Demo App'),
+      home: const MyHomePage(title: 'Flutter Demo App'),
     );
   }
 }
@@ -94,10 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [gradientStartColor, gradientEndColor],
+            colors: const [gradientStartColor, gradientEndColor],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            stops: [0.3, 0.7],
+            stops: const [0.3, 0.7],
           ),
         ),
         child: GridView.count(
@@ -235,9 +235,9 @@ class _MyHomePageState extends State<MyHomePage> {
             // For the About, some may prefer this shorter form:
             const AboutListTile(
               icon: Icon(Icons.info),
-              applicationName:  'FlutterDemos-AboutListTile',
+              applicationName:  'FlutterDemos',
               aboutBoxChildren: [
-                Text("Thanks for trying out this demo!"),
+                Text("This is a pre-fab Flutter ListTile. Thank you for trying out this demo!"),
               ],
             )
           ],

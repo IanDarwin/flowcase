@@ -1,6 +1,6 @@
 = flowcase
 
-A _Fl_utter app that's a sh_owcase_s for a dozen or so self-contained Flutter demos.
+A *Fl*utter app that's a sh*owcase*s for a dozen or so self-contained Flutter demos.
 Most are winnowed down to their minimum for
 easier understanding than some of the official
 demos which IMHO have a bit of rhetorical flourish that at least takes longer to read.

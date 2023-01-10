@@ -34,12 +34,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demos',
+      title: 'FlowCase',
       theme: ThemeData(
         // This is the theme of your application.
         primarySwatch: Colors.lightGreen,
       ),
-      home: const MyHomePage(title: 'Flutter Demo App'),
+      home: const MyHomePage(title: 'Flowcase Flutter Demo'),
     );
   }
 }
@@ -229,13 +229,13 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("About (Custom)"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('About Flutter Demo', About())));
+                    builder: (context) => const Wrapper('About Flowcase', About())));
               },
             ),
             // For the About, some may prefer this shorter form:
             const AboutListTile(
               icon: Icon(Icons.info),
-              applicationName:  'FlutterDemos',
+              applicationName:  'FlowCase',
               aboutBoxChildren: [
                 Text("This is a pre-fab Flutter ListTile. Thank you for trying out this demo!"),
               ],

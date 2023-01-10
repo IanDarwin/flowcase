@@ -68,7 +68,7 @@ class _CardDemosState extends State<CardDemos> {
             height: 100,
             child: Center(
                 child: Text(
-                    "Flutter Demo",
+                    "FlowCase",
                     style: TextStyle(fontSize: 28)
                 )
             ),

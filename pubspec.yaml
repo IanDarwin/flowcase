@@ -12,13 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_html: ^3.0.0-alpha.6
-  # For viewing HTML. Note if you add this while working and use
-  # hot reload, it will fail; you must stop & restart the app the first time.
-  url_launcher: ^6.1.7
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
   flutter_settings_screens: ^0.3.3-null-safety+2
+  url_launcher: ^6.1.7
 
 dev_dependencies:
   flutter_test:

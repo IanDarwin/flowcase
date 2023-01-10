@@ -24,8 +24,8 @@ void main() async {
   runApp(const MyApp());
 }
 
-const Color gradientStartColor = Color(0xff0090b0);
-const Color gradientEndColor = Color(0xffd0549f);
+const Color gradientStartColor = Color(0xff0057b7);
+const Color gradientEndColor = Color(0xffffd700);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -92,12 +92,12 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       drawer: const NavDrawer(),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: const [gradientStartColor, gradientEndColor],
+            colors: [gradientStartColor, gradientEndColor],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            stops: const [0.3, 0.7],
+            stops: [0.3, 0.7],
           ),
         ),
         child: GridView.count(

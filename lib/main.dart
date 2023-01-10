@@ -24,10 +24,13 @@ void main() async {
   runApp(const MyApp());
 }
 
+Color gradientStartColor = const Color(0xff0090b0);
+Color gradientEndColor = const Color(0xffc0549f);
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // This widget is the root of this application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -88,147 +91,157 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       drawer: const NavDrawer(),
-      body: GridView.count(
-        crossAxisCount: 2,
-        childAspectRatio: 2.5,
-        padding: const EdgeInsets.all(10),
-        mainAxisSpacing: 5.0,
-        crossAxisSpacing: 5.0,
-        children: [
-          // Most of these use our own Wrapper but a few do not; edit w/ care.
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("Button Demo"),
-            onPressed: () {
-              Navigator.push(context, FadeInRoute(
-                  page: const Wrapper('Push My Buttons', ButtonDemos())));
-            },
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [gradientStartColor, gradientEndColor],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.3, 0.7],
           ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("Card Demo"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => const Wrapper('Cards', CardDemos())));
-            },
-          ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("Dialog Demo"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) =>
-                  const Wrapper('Dialog', DialogDemos())));
-            },
-          ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("Drag-n-Drop Demo"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) =>
-                  const Wrapper('Shop til you drop', DragDropDemo())));
-            },
-          ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("Layout Demo"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) =>
-                  const Wrapper('Layouts', LayoutDemos())));
-            },
-          ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("List Demo"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => const Wrapper('Lists', ListDemos())));
-            },
-          ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("ListTile Demo"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) =>
-                  const Wrapper('ListTile', ListTileDemos())));
-            },
-          ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("Login Screen Demo"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) =>
-                      Wrapper('Login Screen', AuthForm(key: UniqueKey()))));
-            },
-          ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("SnackBar Demo"),
-            onPressed: () { // Done here in main Widget
-              showUndoSnackbar(context, "Deleted Item #123", () => {});
-            },
-          ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("Table Demo"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => const Wrapper('Tables', TableDemo())));
-            },
-          ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("Tabs Demo"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                // Does not need Wrapper()
-                  builder: (context) => const TabsDemo()));
-            },
-          ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("Text Demo"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => const Wrapper('Text', TextDemos())));
-            },
-          ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("Animation"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => const Wrapper('Text', AnimationApp())));
-            },
-          ),
-          ElevatedButton(
-            style: ButtonStyle(shape: shape),
-            child: const Text("Canvas"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => const Wrapper('Canvas', SimpleDrawWidget())));
-            },
-          ),
-          TextButton(
-            child: const Text("About"),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => const Wrapper('About Flutter Demo', About())));
-            },
-          ),
-          // For the About, could use this shorter form:
-          // const AboutListTile(
-          //   icon: Icon(Icons.info),
-          //   applicationName:  'Flutter Demo',
-          //   aboutBoxChildren: [
-          //     Text("Thanks for trying out this demo!"),
-          //   ],
-          // )
-        ],
+        ),
+        child: GridView.count(
+          crossAxisCount: 2,
+          childAspectRatio: 2.5,
+          padding: const EdgeInsets.all(10),
+          mainAxisSpacing: 5.0,
+          crossAxisSpacing: 5.0,
+          children: [
+            // Most of these use our own Wrapper but a few do not; edit w/ care.
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("Button Demo"),
+              onPressed: () {
+                Navigator.push(context, FadeInRoute(
+                    page: const Wrapper('Push My Buttons', ButtonDemos())));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("Card Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => const Wrapper('Cards', CardDemos())));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("Dialog Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) =>
+                    const Wrapper('Dialog', DialogDemos())));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("Drag-n-Drop Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) =>
+                    const Wrapper('Shop til you drop', DragDropDemo())));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("Layout Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) =>
+                    const Wrapper('Layouts', LayoutDemos())));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("List Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => const Wrapper('Lists', ListDemos())));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("ListTile Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) =>
+                    const Wrapper('ListTile', ListTileDemos())));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("Login Screen Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) =>
+                        Wrapper('Login Screen', AuthForm(key: UniqueKey()))));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("SnackBar Demo"),
+              onPressed: () { // Done here in main Widget
+                showUndoSnackbar(context, "Deleted Item #123", () => {});
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("Table Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => const Wrapper('Tables', TableDemo())));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("Tabs Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                  // Does not need Wrapper()
+                    builder: (context) => const TabsDemo()));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("Text Demo"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => const Wrapper('Text', TextDemos())));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("Animation"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => const Wrapper('Text', AnimationApp())));
+              },
+            ),
+            ElevatedButton(
+              style: ButtonStyle(shape: shape),
+              child: const Text("Canvas"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => const Wrapper('Canvas', SimpleDrawWidget())));
+              },
+            ),
+            TextButton(
+              child: const Text("About (Custom)"),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => const Wrapper('About Flutter Demo', About())));
+              },
+            ),
+            // For the About, some may prefer this shorter form:
+            const AboutListTile(
+              icon: Icon(Icons.info),
+              applicationName:  'FlutterDemos-AboutListTile',
+              aboutBoxChildren: [
+                Text("Thanks for trying out this demo!"),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

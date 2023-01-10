@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutterdemos">
+    package="com.darwinsys.flutterdemos">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -12,7 +12,7 @@
     </queries>
 
     <application
-        android:label="LTDemos"
+        android:label="FlutterDemos"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

@@ -21,13 +21,13 @@ class NavDrawer extends StatelessWidget {
                       image: AssetImage('images/logo.png'))
               ),
               child: Text(
-                'MyApp Menu',
+                'FlutterDemos Menu',
                 style: TextStyle(color: Colors.black, fontSize: 25),
               ),
             ),
             ListTile(
               leading: const Icon(Icons.input),
-              title: const Text('MyApp Intro/Help'),
+              title: const Text('FlutterDemos Intro/Help'),
               onTap: () => {},
             ),
             ListTile(
@@ -40,10 +40,10 @@ class NavDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(Icons.info),
-              title: const Text('About MyApp'),
+              title: const Text('About FlutterDemos'),
               onTap: () => {
                 Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => const Wrapper('About LTDemo', About())))
+                  builder: (context) => const Wrapper('About FlutterDemos', About())))
               }
             ),
           ]),

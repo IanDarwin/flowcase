@@ -1,4 +1,4 @@
-package com.example.flutterdemos
+package com.darwinsys.flutterdemos
 
 import io.flutter.embedding.android.FlutterActivity
 

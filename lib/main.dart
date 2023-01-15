@@ -25,7 +25,7 @@ void main() async {
 }
 
 const Color gradientStartColor = Color(0xff0057b7);
-const Color gradientEndColor = Color(0xffffd700);
+const Color gradientEndColor = Colors.redAccent;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

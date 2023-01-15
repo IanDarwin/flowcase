@@ -1,5 +1,5 @@
-import 'package:counter_demo/settings_page.dart';
-import 'package:counter_demo/wrapper.dart';
+import 'package:flowcase/settings_page.dart';
+import 'package:flowcase/wrapper.dart';
 import 'package:flutter/material.dart';
 
 import 'about.dart';

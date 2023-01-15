@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         // This is the theme of your application.
         primarySwatch: Colors.lightGreen,
       ),
-      home: const MyHomePage(title: 'Flowcase Flutter Demo'),
+      home: const MyHomePage(title: 'FlowCase: Demo Flutter Demo'),
     );
   }
 }

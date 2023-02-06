@@ -20,7 +20,7 @@ class Wrapper extends StatelessWidget {
               onPressed: () async {
                 Future<String> code = rootBundle.loadString("lib/$fileName.dart");
                 code.then((s) =>
-                  alertWidgetChild(context, SingleChildScrollView(child: Text(s)), title: "Code"));
+                  alertWidgetChild(context, SingleChildScrollView(child: Text(s)), title: "Code $fileName"));
               },
             )
           ],

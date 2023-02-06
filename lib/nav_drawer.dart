@@ -43,7 +43,7 @@ class NavDrawer extends StatelessWidget {
               title: const Text('About FlowCase'),
               onTap: () => {
                 Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => const Wrapper('About FlowCase', About())))
+                  builder: (context) => const Wrapper('About FlowCase', About(), 'about')))
               }
             ),
           ]),

@@ -93,7 +93,7 @@ class ListDemosState extends State<ListDemos> {
   }
 
   // The PopupMenuItem.onTap does its own Navigator.pop,
-  // so we use Future.delayed() to "delay" arount the pop.
+  // so we use Future.delayed() to "delay" around the pop.
   _edit(context) async {
     debugPrint("Edit");
     Future.delayed(

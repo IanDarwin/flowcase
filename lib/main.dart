@@ -113,15 +113,14 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("Button Demo"),
               onPressed: () {
                 Navigator.push(context, FadeInRoute(
-                    page: const Wrapper('Push My Buttons', ButtonDemos())));
+                    page: const Wrapper('Push My Buttons', ButtonDemos(), "button_demos",)));
               },
             ),
             ElevatedButton(
               style: ButtonStyle(shape: shape),
-              child: const Text("Card Demo"),
-              onPressed: () {
+              child: const Text("Card Demo"), onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Cards', CardDemos())));
+                    builder: (context) => const Wrapper('Cards', CardDemos(), 'card_demos')));
               },
             ),
             ElevatedButton(
@@ -130,7 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) =>
-                    const Wrapper('Dialog', DialogDemos())));
+                    const Wrapper('Dialog', DialogDemos(), "dialog_demos")));
               },
             ),
             ElevatedButton(
@@ -139,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) =>
-                    const Wrapper('Shop til you drop', DragDropDemo())));
+                    const Wrapper('Shop til you drop', DragDropDemo(), "drag_drop")));
               },
             ),
             ElevatedButton(
@@ -148,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) =>
-                    const Wrapper('Layouts', LayoutDemos())));
+                    const Wrapper('Layouts', LayoutDemos(), "layout_demos")));
               },
             ),
             ElevatedButton(
@@ -156,7 +155,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("List Demo"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Lists', ListDemos())));
+                    builder: (context) => const Wrapper('Lists', ListDemos(), "list_demos")));
+
               },
             ),
             ElevatedButton(
@@ -165,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) =>
-                    const Wrapper('ListTile', ListTileDemos())));
+                    const Wrapper('ListTile', ListTileDemos(), "list_tile_demo",)));
               },
             ),
             ElevatedButton(
@@ -174,7 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context) =>
-                        Wrapper('Login Screen', AuthForm(key: UniqueKey()))));
+                        Wrapper('Login Screen', AuthForm(key: UniqueKey()), "login_screen")));
               },
             ),
             ElevatedButton(
@@ -189,7 +189,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("Table Demo"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Tables', TableDemo())));
+                    builder: (context) => const Wrapper('Tables', TableDemo(), "table_demo",)));
               },
             ),
             ElevatedButton(
@@ -197,7 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("Tabs Demo"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                  // Does not need Wrapper()
+                  // Does not use Wrapper(), has own Scaffold
                     builder: (context) => const TabsDemo()));
               },
             ),
@@ -206,7 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("Text Demo"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Text', TextDemos())));
+                    builder: (context) => const Wrapper('Text', TextDemos(), "text_demos")));
               },
             ),
             ElevatedButton(
@@ -214,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("Animation"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Text', AnimationApp())));
+                    builder: (context) => const Wrapper('Text', AnimationApp(), "animation_demo")));
               },
             ),
             ElevatedButton(
@@ -222,7 +222,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text("Canvas"),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('Canvas', SimpleDrawWidget())));
+                    builder: (context) => const Wrapper('Canvas', SimpleDrawWidget(), "canvas",)));
               },
             ),
             TextButton(
@@ -230,7 +230,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(color: Colors.black)),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => const Wrapper('About Flowcase', About())));
+                    builder: (context) => const Wrapper('About Flowcase', About(), "about",)));
               },
             ),
             // For the About, some may prefer this shorter form:

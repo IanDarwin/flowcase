@@ -39,15 +39,14 @@ class _DialogDemosState extends State<DialogDemos> {
   }
 }
 
-alert(BuildContext context, String message, {title = 'Error', actions}) async {
-  debugPrint("alert('$message')");
+alertWidgetChild(BuildContext context, Widget child, { title = "Error", actions}) {
   showDialog<void>(
       context: context,
       barrierDismissible: true, // must tap a button to dismiss
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(title),
-          content: Text(message),
+          content: child,
           actions: actions ?? <Widget>[
             TextButton(
               child: const Text('OK'),
@@ -57,6 +56,10 @@ alert(BuildContext context, String message, {title = 'Error', actions}) async {
         );
       }
   );
+}
+
+alert(BuildContext context, String message, {title = 'Error', actions}) async {
+  alertWidgetChild(context, Text(message), title: title);
 }
 
 

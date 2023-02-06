@@ -11,6 +11,7 @@ class ListTileDemos extends StatelessWidget {
           leading: Text('🇨🇦'),
           title: Text("Ian Darwin"),
           subtitle: Text("Mobile Developer"),
+          tileColor: Colors.greenAccent,
           trailing:
               Icon(Icons.book,
                 color: Colors.red,
@@ -20,6 +21,7 @@ class ListTileDemos extends StatelessWidget {
           leading: Text('🇬🇧'),
           title: Text("Charles Darwin"),
           subtitle: Text("Naturalist"),
+          tileColor: Colors.orangeAccent,
           trailing:
                 Icon(Icons.anchor_rounded,
                   color: Colors.blue,

@@ -59,7 +59,7 @@ alertWidgetChild(BuildContext context, Widget child, { title = "Error", actions}
 }
 
 alert(BuildContext context, String message, {title = 'Error', actions}) async {
-  alertWidgetChild(context, Text(message), title: title);
+  alertWidgetChild(context, Text(message), actions: actions, title: title);
 }
 
 

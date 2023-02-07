@@ -105,7 +105,7 @@ class _TableDemoState extends State<TableDemo> {
 
           // THIRD TABLE
           const Text("DataTable"),
-          Container(
+          Wrap(children: [Container(
               padding: const EdgeInsets.all(7),
               child: DataTable(
                 border: TableBorder.all(),
@@ -123,8 +123,9 @@ class _TableDemoState extends State<TableDemo> {
                   ],
                   )
                 ],
+              ),
               )
-          )
+          ])
         ]
     );
   }

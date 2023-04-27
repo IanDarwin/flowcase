@@ -77,7 +77,7 @@ class ListDemosState extends State<ListDemos> {
           "${p.lastName}, ${p.firstName}",
           style: Theme.of(context)
               .textTheme
-              .headline5,
+              .headlineSmall,
         ),
       )
       );

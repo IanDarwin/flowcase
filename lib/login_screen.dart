@@ -77,7 +77,7 @@ class AuthFormState extends State<AuthForm> {
                     obscureText: true,
                     validator: (value) {
                       if (value!.isEmpty || value.length < 7) {
-                        return "Please Enter Atleast 7 Charecter";
+                        return "Please Enter At Least 7 Characters";
                       }
                       return null;
                     },

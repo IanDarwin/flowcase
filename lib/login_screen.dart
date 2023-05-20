@@ -49,7 +49,7 @@ class AuthFormState extends State<AuthForm> {
                     decoration: const InputDecoration(labelText: "Email"),
                     validator: (value) {
                       if (value!.isEmpty || !value.contains("@")) {
-                        return "Please Enter a Valid Email";
+                        return "Please enter a valid email";
                       }
                       return null;
                     },
@@ -63,7 +63,7 @@ class AuthFormState extends State<AuthForm> {
                       decoration: const InputDecoration(labelText: "User Name"),
                       validator: (value) {
                         if (value!.isEmpty || value.length < 4) {
-                          return "Please Enter Atleast 4 Charecter";
+                          return "Please enter at least 4 charecters";
                         }
                         return null;
                       },
@@ -77,7 +77,7 @@ class AuthFormState extends State<AuthForm> {
                     obscureText: true,
                     validator: (value) {
                       if (value!.isEmpty || value.length < 7) {
-                        return "Please Enter At Least 7 Characters";
+                        return "Please enter at least 7 characters";
                       }
                       return null;
                     },
@@ -114,7 +114,7 @@ class AuthFormState extends State<AuthForm> {
                     },
                     child: Text(isLogIn
                         ? "Create New Account"
-                        : "I Already have a Account"),
+                        : "I already have an Account"),
                   ),
                 ],
               )),
